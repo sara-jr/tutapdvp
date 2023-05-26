@@ -1,6 +1,7 @@
 <?php
 
 return [
+	'name' => 'pointofsale',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,9 +79,9 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'pjRnw4nH9lCgR1qw'),
 
-	'cipher' => MCRYPT_RIJNDAEL_128,
+	'cipher' => 'AES-128-CBC',
 
 	/*
 	|--------------------------------------------------------------------------
