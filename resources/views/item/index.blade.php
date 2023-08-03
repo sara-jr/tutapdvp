@@ -3,11 +3,21 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
+		<div class="col col-md-offset-1">
 			<div class="panel panel-default">
 				<div class="panel-heading">{{trans('item.list_items')}}</div>
-
 				<div class="panel-body">
+				<div class="form-group">
+					<label for="item_name">
+						Buscar Articulo
+					</label>
+					<input type="text" name="item_name" placeholder="Escriba un nombre"
+						hx-target="next tbody"
+						hx-include="#csfrinput"
+						hx-trigger="keyup changed delay:500ms"
+						hx-get="{{ URL::to('api/itemsearch') }}" />
+					<input id="csfrinput" type="hidden" name="_token" value="{{ csrf_token() }}" />
+				</div>
 				<a class="btn btn-small btn-success" href="{{ URL::to('items/create') }}">{{trans('item.new_item')}}</a>
 				<hr />
 @if (Session::has('message'))
